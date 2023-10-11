@@ -11,18 +11,17 @@ import (
 )
 
 func main() {
-	if len(os.Args) < 3 {
-		log.Fatal("no command.\nuse 'encode b2d7a013-86df-4aa7-8245-8f3715c87ae2' or 'decode KI+VUsKMSqGvNJW6jORsWg=='")
+	if len(os.Args) < 2 {
+		log.Fatal("no value.\nuse 'b2d7a013-86df-4aa7-8245-8f3715c87ae2' or 'KI+VUsKMSqGvNJW6jORsWg=='")
 	}
 
-	switch os.Args[1] {
-	case "encode":
-		fmt.Println(encodeUUID(os.Args[2]))
-	case "decode":
-		fmt.Println(decodeUUID(os.Args[2]))
-	default:
-		log.Fatal("invalid command.\nuse 'encode b2d7a013-86df-4aa7-8245-8f3715c87ae2' or 'decode KI+VUsKMSqGvNJW6jORsWg=='")
+	val := os.Args[1]
+	id, err := uuid.Parse(val)
+	if err == nil {
+		fmt.Println(base64.StdEncoding.EncodeToString(id[:]))
 	}
+
+	fmt.Println(decodeUUID(os.Args[2]))
 }
 
 func decodeUUID(raw string) string {
