@@ -19,9 +19,10 @@ func main() {
 	id, err := uuid.Parse(val)
 	if err == nil {
 		fmt.Println(base64.StdEncoding.EncodeToString(id[:]))
+		return
 	}
 
-	fmt.Println(decodeUUID(os.Args[2]))
+	fmt.Println(decodeUUID(val))
 }
 
 func decodeUUID(raw string) string {
