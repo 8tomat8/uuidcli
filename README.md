@@ -11,6 +11,6 @@ go install github.com/8tomat8/uuidcli@latest
 ## How to
 
 ```bash
-uuidcli encode b2d7a013-86df-4aa7-8245-8f3715c87ae2
-uuidcli decode stegE4bfSqeCRY83Fch64g==
+uuidcli b2d7a013-86df-4aa7-8245-8f3715c87ae2
+uuidcli stegE4bfSqeCRY83Fch64g==
 ```
