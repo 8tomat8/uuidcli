@@ -5,7 +5,7 @@ If you have to deal with byte UUIDs encoded into base64 it might be annoying to 
 ## Install
 
 ```bash
-go install github.com/8tomat8/uuidcli@latest
+go install github.com/8tomat8/uuidcli@main
 ```
 
 ## How to
